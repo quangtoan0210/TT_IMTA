@@ -30,16 +30,6 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                
-                                {{-- Hiển thị thông báo thành công --}}
-                                @if (session('success'))
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        {{ session('success') }}
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                            aria-label="Close"></button>
-                                    </div>
-                                @endif
-
                                 <table class="table table-striped mb-0">
                                     <thead>
                                         <tr>

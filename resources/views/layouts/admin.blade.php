@@ -7,7 +7,7 @@
 <head>
 
         <meta charset="utf-8" />
-        <title>Dashboard | Tapeli - Responsive Admin Dashboard Template</title>
+        <title>ADMIN-QT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc."/>
         <meta name="author" content="Zoyothemes"/>
@@ -21,6 +21,9 @@
 
         <!-- Icons -->
         <link href="{{asset('assets/admin/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <!-- Toastr CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
     </head>
 
@@ -75,7 +78,48 @@
         <script src="{{asset('assets/admin/js/pages/analytics-dashboard.init.js')}}"></script>
 
         <!-- App js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
         <script src="{{asset('assets/admin/js/app.js')}}"></script>
+        <script>
+            toastr.options = {
+                "closeButton": true,         // Hiển thị nút đóng
+                "debug": false,              // Bật chế độ debug
+                "newestOnTop": true,         // Đưa thông báo mới lên đầu
+                "progressBar": true,         // Hiển thị thanh tiến trình
+                "positionClass": "toast-top-right",  // Vị trí hiển thị: "toast-top-right", "toast-bottom-right", "toast-bottom-left", "toast-top-left"
+                "preventDuplicates": false,  // Ngăn thông báo trùng lặp
+                "onclick": null,             // Sự kiện click
+                "showDuration": "200",       // Thời gian hiện thông báo (ms)
+                "hideDuration": "1000",      // Thời gian ẩn thông báo (ms)
+                "timeOut": "2000",           // Thời gian tồn tại của thông báo (ms)
+                "extendedTimeOut": "1000",   // Thời gian hiện thêm khi người dùng di chuột vào thông báo (ms)
+                "showEasing": "swing",       // Hiệu ứng khi hiện thông báo
+                "hideEasing": "linear",      // Hiệu ứng khi ẩn thông báo
+                "showMethod": "fadeIn",      // Hiệu ứng hiện thông báo
+                "hideMethod": "fadeOut"      // Hiệu ứng ẩn thông báo
+            };
+        </script>
+        
+        <script>
+            @if(Session::has('success'))
+                toastr.success("{{ Session::get('success') }}");
+            @endif
+        
+            @if(Session::has('error'))
+                toastr.error("{{ Session::get('error') }}");
+            @endif
+        
+            @if(Session::has('info'))
+                toastr.info("{{ Session::get('info') }}");
+            @endif
+        
+            @if(Session::has('warning'))
+                toastr.warning("{{ Session::get('warning') }}");
+            @endif
+        </script>
+        
 
     </body>
 
