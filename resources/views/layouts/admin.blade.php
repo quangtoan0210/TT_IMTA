@@ -23,7 +23,7 @@
         <link href="{{asset('assets/admin/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- Toastr CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+        @yield('css')
 
     </head>
 
@@ -58,7 +58,7 @@
 
         </div>
         <!-- END wrapper -->
-
+        @yield('js')
         <!-- Vendor -->
         <script src="{{asset('assets/admin/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

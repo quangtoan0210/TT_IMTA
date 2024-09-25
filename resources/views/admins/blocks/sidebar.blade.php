@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class='tp-link' href='calendar.html'>
+                    <a class='tp-link' href='{{ route('admins.sanphams.index') }}'>
                         <i data-feather="package"></i>
                         <span>Sản phẩm</span>
                     </a>
