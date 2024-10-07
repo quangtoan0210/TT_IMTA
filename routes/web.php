@@ -27,6 +27,8 @@ Route::post('register', [AuthController::class, 'register'])->name('register');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/', [ProductController::class, 'index'])->name('home');
 Route::get('/product/detail/{id}', [ProductController::class, 'chiTietSanPham'])->name('products.detail');
+Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
+
 
 
 //Cart

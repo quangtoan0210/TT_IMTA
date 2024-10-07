@@ -43,7 +43,7 @@
                                            
                                         </li>
                                         
-                                        <li><a href="shop.html">Cửa Hàng</a>
+                                        <li><a href="{{route('shop')}}">Cửa Hàng</a>
                                             
                                         </li>
                                        

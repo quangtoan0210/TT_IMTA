@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="{{ asset('assets/client/css/plugins/jqueryui.min.css') }}">
     <!-- main style css -->
     <link rel="stylesheet" href="{{ asset('assets/client/css/style.css') }}">
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     @yield('css')
 </head>
 
@@ -84,6 +84,8 @@
     <script src="{{ asset('assets/client/js/plugins/google-map.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('assets/client/js/main.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     @yield('js')
 </body>
