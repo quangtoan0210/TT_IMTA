@@ -108,11 +108,11 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="ngay_nhap" class="form-label">Số lượng sản phẩm</label>
+                                            <label for="ngay_nhap" class="form-label">Ngày nhập sản phẩm</label>
                                             <input type="date" id="ngay_nhap" name="ngay_nhap"
                                                 class="form-control 
                                             @error('ngay_nhap') is-invalid @enderror"
-                                                value="{{ old('ngay_nhap') }}" placeholder="Số lượng sản phẩm">
+                                                value="{{ old('ngay_nhap') }}" placeholder="Ngày nhập">
                                             @error('ngay_nhap')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror

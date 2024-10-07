@@ -20,7 +20,7 @@ class AuthController extends Controller
             'password' => ['required', 'string']
         ]);
         if (Auth::attempt($user)) {
-            return redirect()->intended('home');
+            return redirect()->intended('/');
         }
         return redirect()->back()->withErrors([
             'email' => 'Thông tin người dùng không đúng'
@@ -41,7 +41,7 @@ class AuthController extends Controller
      
         $user = User::query()->create($data);
         Auth::login($user);
-        return redirect()->intended('home');
+        return redirect()->intended('/');
     }
     //Đăng xuất
     public function logout(Request $request)

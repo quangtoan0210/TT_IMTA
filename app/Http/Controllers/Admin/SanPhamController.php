@@ -85,7 +85,9 @@ class SanPhamController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $title = 'Chi tiết sản phẩm';
+        $sanPham = SanPham::query()->with(['danhMuc', 'hinhAnhSanPham'])->findOrFail($id);
+        return view('admins.sanphams.show', compact('title','sanPham'));
     }
 
     /**

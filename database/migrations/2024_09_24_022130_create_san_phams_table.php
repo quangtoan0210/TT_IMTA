@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('gia_san_pham');
             $table->string('gia_khuyen_mai')->nullable();
             $table->string('mo_ta_ngan')->nullable();
-            $table->string('noi_dung')->nullable();
+            $table->text('noi_dung')->nullable();
             $table->unsignedInteger('so_luong');
             $table->unsignedBigInteger('luot_xem')->default(0);
             $table->date('ngay_nhap');
