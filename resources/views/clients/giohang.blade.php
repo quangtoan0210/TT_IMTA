@@ -135,6 +135,8 @@
                                     </table>
                                 </div>
                             </div>
+                            <a href="{{ route('donhangs.create') }}" class="btn btn-sqr d-block">Proceed Checkout</a>
+
                         </div>
                     </div>
                 </div>

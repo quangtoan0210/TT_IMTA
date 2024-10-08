@@ -163,24 +163,23 @@
                             </div>
 
                             <!-- item-->
-                            <a class='dropdown-item notify-item' href='pages-profile.html'>
-                                <i class="mdi mdi-account-circle-outline fs-16 align-middle"></i>
-                                <span>My Account</span>
+                            <!-- item-->
+                            <a class='dropdown-item notify-item' href='{{route('home')}}'>
+                                <span>Trang chủ</span>
                             </a>
 
-                            <!-- item-->
-                            <a class='dropdown-item notify-item' href='auth-lock-screen.html'>
-                                <i class="mdi mdi-lock-outline fs-16 align-middle"></i>
-                                <span>Lock Screen</span>
-                            </a>
-
-                            <div class="dropdown-divider"></div>
 
                             <!-- item-->
-                            <a class='dropdown-item notify-item' href='auth-logout.html'>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            
+                            <a class="dropdown-item notify-item" href="#" 
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="mdi mdi-location-exit fs-16 align-middle"></i>
                                 <span>Logout</span>
                             </a>
+                            
 
                         </div>
                     </li>

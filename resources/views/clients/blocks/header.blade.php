@@ -83,6 +83,7 @@
                     @csrf
                 </form>
             </li>
+            <li><a href="{{ route('donhangs.index') }}">My Order</a></li>
         </ul>
        
     @else

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\DanhMucController;
+use App\Http\Controllers\Admin\DonHangControlelr;
 use App\Http\Controllers\Admin\SanPhamController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,7 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/', [ProductController::class, 'index'])->name('home');
 Route::get('/product/detail/{id}', [ProductController::class, 'chiTietSanPham'])->name('products.detail');
 Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
+Route::get('/shop/category/{id}', [ProductController::class, 'category'])->name('shop.category');
 
 
 
@@ -35,6 +38,11 @@ Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
 Route::get('/list-cart',                [CartController::class, 'listCart'])->name('cart.list');
 Route::post('/add-to-cart',             [CartController::class, 'addCart'])->name('cart.add');
 Route::post('/update-cart',             [CartController::class, 'updateCart'])->name('cart.update');
+
+//Order
+Route::middleware('auth')->group(function () {
+    Route::resource('donhangs', OrderController::class);
+});
 
 
 // Route ADMIN
@@ -49,4 +57,12 @@ Route::middleware(['auth', 'auth.admin'])->prefix('admins')
         Route::resource('danhmucs', DanhMucController::class);
 
         Route::resource('sanphams', SanPhamController::class);
+        Route::prefix('donhangs')
+        ->as('donhangs.')
+        ->group(function () {
+            Route::get('/',                 [DonHangControlelr::class, 'index'])->name('index');
+            Route::get('/show/{id}',        [DonHangControlelr::class, 'show'])->name('show');
+            Route::put('{id}/update',       [DonHangControlelr::class, 'update'])->name('update');
+            Route::delete('{id}/destroy',   [DonHangControlelr::class, 'destroy'])->name('destroy');
+        });
     });

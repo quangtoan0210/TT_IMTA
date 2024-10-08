@@ -20,7 +20,12 @@ class AuthController extends Controller
             'password' => ['required', 'string']
         ]);
         if (Auth::attempt($user)) {
-            return redirect()->intended('/');
+            // Kiểm tra vai trò của người dùng sau khi đăng nhập thành công
+            if (Auth::user()->role === User::ROLE_ADMIN) {
+                return redirect()->route('admins.dashboard'); // Trang quản trị admin
+            } else {
+                return redirect()->route('home'); // Trang home cho người dùng
+            }
         }
         return redirect()->back()->withErrors([
             'email' => 'Thông tin người dùng không đúng'

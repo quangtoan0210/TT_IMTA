@@ -51,6 +51,12 @@
                         <span>Sản phẩm</span>
                     </a>
                 </li>
+                <li>
+                    <a class='tp-link' href='{{ route('admins.donhangs.index') }}'>
+                        <i data-feather="shopping-bag"></i>
+                        <span> Đơn hàng </span>
+                    </a>
+                </li>
               
             </ul>
 
